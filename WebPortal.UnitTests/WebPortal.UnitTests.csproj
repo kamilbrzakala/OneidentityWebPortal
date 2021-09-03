@@ -72,6 +72,9 @@
     <PackageReference Include="Ninject.Web.Common">
       <Version>3.3.2</Version>
     </PackageReference>
+    <PackageReference Include="Ninject.Web.Common.WebHost">
+      <Version>3.3.2</Version>
+    </PackageReference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\WebPortal.WebUI\WebPortal.WebUI.csproj">

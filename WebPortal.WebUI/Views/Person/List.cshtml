@@ -1,0 +1,15 @@
+﻿@using WebPortal.Domain.Entities
+@model IEnumerable<Person>
+
+@{
+    ViewBag.Title = "Employees";
+}
+
+@foreach (var p in Model)
+            {
+                <div>
+                    <h4>@p.InternalName</h4>
+                    @p.CentralAccount
+                    @p.DefaultEmailAddress
+                </div>
+            }
