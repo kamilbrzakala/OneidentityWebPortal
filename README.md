@@ -23,6 +23,8 @@ Install-Package Moq -projectname WebPortal.WebUI
 Install-Package Microsoft.Aspnet.Mvc -projectname WebPortal.Domain
     Install-Package Microsoft.Aspnet.Mvc -projectname WebPortal.UnitTests   
 Install-Package System.ComponentModel.Annotations -projectname WebPortal.Domain
+Install-Package EntityFramework -projectname WebPortal.Domain
+Install-Package EntityFramework -projectname WebPortal.WebUI
 5. Setup dependencies by adding references:
 WebPortal.Domain -> System.ComponentModel.DataAnnotations
 WebPortal.WebUI -> WebPortal.Domain
