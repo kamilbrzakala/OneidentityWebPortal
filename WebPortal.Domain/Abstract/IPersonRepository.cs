@@ -9,6 +9,6 @@ namespace WebPortal.Domain.Abstract
 {
     public interface IPersonRepository
     {
-        IEnumerable<Person> Persons { get; }
+        IEnumerable<Person> IEmployees { get; }
     }
 }

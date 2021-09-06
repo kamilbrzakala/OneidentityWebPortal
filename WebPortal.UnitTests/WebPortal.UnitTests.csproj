@@ -77,6 +77,10 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\WebPortal.Domain\WebPortal.Domain.csproj">
+      <Project>{ac8c33d5-137f-46f4-bb2d-772d437aa795}</Project>
+      <Name>WebPortal.Domain</Name>
+    </ProjectReference>
     <ProjectReference Include="..\WebPortal.WebUI\WebPortal.WebUI.csproj">
       <Project>{3D655E4B-47D9-41A8-907D-24DFD6999C81}</Project>
       <Name>WebPortal.WebUI</Name>

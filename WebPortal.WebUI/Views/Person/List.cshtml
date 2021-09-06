@@ -8,8 +8,9 @@
 @foreach (var p in Model)
             {
                 <div>
-                    <h4>@p.InternalName</h4>
+                    <h2>@p.InternalName</h2>
                     @p.CentralAccount
                     @p.DefaultEmailAddress
+                    @p.UID_Person
                 </div>
             }
