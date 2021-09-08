@@ -31,4 +31,4 @@ WebPortal.Domain -> System.ComponentModel.DataAnnotations
 WebPortal.WebUI -> WebPortal.Domain
 WebPortal.UnitTests -> WebPortal.WebUI, System.Web, Microsoft.CSharp
 7. Install One Identity Manager on the server
-8. Run Powershell script in order to populate a domain with a departments org structure: Prepare AD OU structure.ps1
+[optional]8. Run Powershell script in order to populate a domain with a departments org structure: Prepare AD OU structure.ps1
