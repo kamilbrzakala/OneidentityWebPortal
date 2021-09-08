@@ -1,11 +1,14 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
+using System.Web.Mvc;
 using Moq;
 using WebPortal.Domain.Abstract;
 using WebPortal.Domain.Entities;
 using WebPortal.WebUI.Controllers;
 using System.Collections.Generic;
 using System.Linq;
+using WebPortal.WebUI.Models;
+using WebPortal.WebUI.HtmlHelpers;
 
 namespace WebPortal.UnitTests
 {
@@ -39,6 +42,35 @@ namespace WebPortal.UnitTests
             
             Assert.AreEqual(personArray[0].DefaultEmailAddress, "france.andrade@hotmail.com");
             Assert.AreEqual(personArray[1].DefaultEmailAddress, "naraiza@hotmail.com");
+        }
+        
+        [TestMethod]
+        public void Can_Generate_Page_Links()
+        {
+            // we need helper object to use extension method 'PageLinks'
+            HtmlHelper myHelper = null;
+
+            // prepare data
+            PagingInfo pagingInfo = new PagingInfo
+            {
+                CurrentPage = 2,
+                ItemsPerPage = 10,
+                TotalItems = 30
+            };
+
+            // prepare - configure delegatee with lambda expression
+            // Declare a Func variable and assign a lambda expression to the
+            // variable. The method takes an integer and converts it to string.
+            Func<int, string> pageUrlDelegate = i => "Strona" + i;
+
+            // action
+            MvcHtmlString result = myHelper.PageLinks(pagingInfo, pageUrlDelegate);
+
+            // assertion
+            Assert.AreEqual(@"<a class=""btn btn-default"" href=""Strona1"">1</a>"
+                + @"<a class=""btn btn-default btn-primary selected"" href=""Strona2"">2</a>"
+                + @"<a class=""btn btn-default"" href=""Strona3"">3</a>", result.ToString());
+
         }
     }
 }
