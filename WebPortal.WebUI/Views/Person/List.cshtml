@@ -1,16 +1,18 @@
-﻿@using WebPortal.Domain.Entities
-@model IEnumerable<Person>
+﻿@model WebPortal.WebUI.Models.EmployeesListViewModel
 
 @{
     ViewBag.Title = "Employees";
 }
 
-@foreach (var p in Model)
-            {
-                <div>
-                    <h2>@p.InternalName</h2>
-                    @p.CentralAccount
-                    @p.DefaultEmailAddress
-                    @p.UID_Person
-                </div>
-            }
+@foreach (var p in Model.Employees)
+{
+    <div>
+        <h3>@p.InternalName</h3>
+        @p.DefaultEmailAddress
+        @p.CentralAccount
+        @p.PersonnelNumber
+    </div>
+}
+<div>
+    @Html.PageLinks(Model.PagingInfo, x => Url.Action("List", new {page = x}))
+</div>
