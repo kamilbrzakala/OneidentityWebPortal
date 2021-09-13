@@ -25,9 +25,10 @@ Install-Package Microsoft.Aspnet.Mvc -projectname WebPortal.Domain
 Install-Package System.ComponentModel.Annotations -projectname WebPortal.Domain
 Install-Package EntityFramework -projectname WebPortal.Domain
 Install-Package EntityFramework -projectname WebPortal.WebUI
+Install-Package -version 3.0.0 bootstrap -projectname WebPortal.WebUI
 5. Setup dependencies by adding references:
 WebPortal.Domain -> System.ComponentModel.DataAnnotations
 WebPortal.WebUI -> WebPortal.Domain
 WebPortal.UnitTests -> WebPortal.WebUI, System.Web, Microsoft.CSharp
 7. Install One Identity Manager on the server
-8. Run Powershell script in order to populate a domain with a departments org structure: Prepare AD OU structure.ps1
+[optional]8. Run Powershell script in order to populate a domain with a departments org structure: Prepare AD OU structure.ps1
