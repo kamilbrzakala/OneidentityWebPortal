@@ -1,0 +1,12 @@
+﻿@model WebPortal.Domain.Entities.Person
+@using WebPortal.Domain.Entities;
+@{
+    var items = this.ViewData["nextItem"];
+}
+<tr>
+    <th scope="row"><span></span>@items</th>
+    <td>@Model.InternalName</td>
+    <td>@Model.PersonnelNumber</td>
+    <td>@Model.CentralAccount</td>
+    <td>@Model.DefaultEmailAddress</td>
+</tr>

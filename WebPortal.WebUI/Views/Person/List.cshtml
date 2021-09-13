@@ -1,18 +1,30 @@
 ﻿@model WebPortal.WebUI.Models.EmployeesListViewModel
-
+@using WebPortal.Domain.Entities;
 @{
     ViewBag.Title = "Employees";
+    int currentPage = Model.PagingInfo.CurrentPage;
+    int totalItems = Model.PagingInfo.TotalItems;
+    int itemNum = 1 + (currentPage * 10) - 10;
 }
 
-@foreach (var p in Model.Employees)
-{
-    <div>
-        <h3>@p.InternalName</h3>
-        @p.DefaultEmailAddress
-        @p.CentralAccount
-        @p.PersonnelNumber
-    </div>
-}   
-<div>
-    @Html.PageLinks(Model.PagingInfo, x => Url.Action("List", new {page = x}))
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Full Name</th>
+            <th scope="col">EmployeeID</th>
+            <th scope="col">Login</th>
+            <th scope="col">Email</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var p in Model.Employees)
+        {
+            @Html.Partial("EmployeesSummary", p, new ViewDataDictionary { { "nextItem", itemNum++} })
+        }
+    </tbody>
+</table>
+
+<div class="btn-group pull-right">
+    @Html.PageLinks(Model.PagingInfo, x => Url.Action("List", new { page = x }))
 </div>
