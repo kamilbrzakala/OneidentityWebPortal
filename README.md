@@ -26,6 +26,7 @@ Install-Package System.ComponentModel.Annotations -projectname WebPortal.Domain
 Install-Package EntityFramework -projectname WebPortal.Domain
 Install-Package EntityFramework -projectname WebPortal.WebUI
 Install-Package -version 3.0.0 bootstrap -projectname WebPortal.WebUI
+Install-Package PagedList.Mvc -projectname WebPortal.WebUI
 5. Setup dependencies by adding references:
 WebPortal.Domain -> System.ComponentModel.DataAnnotations
 WebPortal.WebUI -> WebPortal.Domain
