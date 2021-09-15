@@ -7,24 +7,47 @@
     int itemNum = 1 + (currentPage * 10) - 10;
 }
 
-<table class="table table-bordered">
-    <thead>
-        <tr>
-            <th scope="col">#</th>
-            <th scope="col">Full Name</th>
-            <th scope="col">EmployeeID</th>
-            <th scope="col">Login</th>
-            <th scope="col">Email</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var p in Model.Employees)
-        {
-            @Html.Partial("EmployeesSummary", p, new ViewDataDictionary { { "nextItem", itemNum++} })
-        }
-    </tbody>
-</table>
+@if (Model.Employees.Count() == 0)
+{
+    
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Full Name</th>
+                <th scope="col">EmployeeID</th>
+                <th scope="col">Login</th>
+                <th scope="col">Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td colspan="5"> Records not found </td>
+            </tr>
+        </tbody>
+    </table>
+}
+else
+{
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Full Name</th>
+                <th scope="col">EmployeeID</th>
+                <th scope="col">Login</th>
+                <th scope="col">Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var p in Model.Employees)
+            {
+                @Html.Partial("EmployeesSummary", p, new ViewDataDictionary { { "nextItem", itemNum++ } })
+            }
+        </tbody>
+    </table>
 
-<div class="btn-group pull-right">
-    @Html.PageLinks(Model.PagingInfo, x => Url.Action("List", new { page = x }))
-</div>
+    <div class="btn-group pull-right">
+        @Html.PageLinks(Model.PagingInfo, x => Url.Action("List", new { page = x }))
+    </div>
+}

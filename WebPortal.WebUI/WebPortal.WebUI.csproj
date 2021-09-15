@@ -163,6 +163,7 @@
     <Content Include="Views\Person\List.cshtml" />
     <Content Include="Scripts\jquery-1.9.0.min.map" />
     <Content Include="Views\Shared\EmployeesSummary.cshtml" />
+    <Content Include="Views\Person\ListPost.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
