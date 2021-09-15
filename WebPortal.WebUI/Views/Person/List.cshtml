@@ -60,6 +60,8 @@ else
 
     <div class="btn-group pull-right">
         @*@Html.PageLinks(Model.PagingInfo, x => Url.Action("List", new { page = x }))*@
-        @Html.PagedListPager(Model.Employees, page => Url.Action("List", new { page, search = Request.QueryString["search"] }))
+        @Html.PagedListPager(Model.Employees, page => Url.Action("List", new { page, search = Request.QueryString["search"] }),
+        new PagedListRenderOptions() { Display = PagedListDisplayMode.IfNeeded, DisplayPageCountAndCurrentLocation = true}
+        )
     </div>
 }

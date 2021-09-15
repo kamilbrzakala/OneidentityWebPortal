@@ -34,6 +34,7 @@ namespace WebPortal.WebUI.Controllers
                 Employees = repository.IEmployees
                 .Where(p => search == null || p.InternalName.Contains(search)
                || p.PersonnelNumber.Contains(search)
+               || p.CentralAccount.Contains(search)
                || p.DefaultEmailAddress.Contains(search))
                 .OrderBy(p => p.LastName)
                 .ToPagedList(page ?? 1, PAGESIZE),
