@@ -13,11 +13,11 @@ namespace WebPortal.WebUI
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
-            routes.MapRoute(
+            /*routes.MapRoute(
                 name: null,
                 url: "Strona{page}",
                 defaults: new {Controller = "Person", action = "List"}
-                );
+                );*/
 
             routes.MapRoute(
                 name: "Default",

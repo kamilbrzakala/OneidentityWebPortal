@@ -1,15 +1,26 @@
 ﻿@model WebPortal.WebUI.Models.EmployeesListViewModel
 @using WebPortal.Domain.Entities;
+@using PagedList;
+@using PagedList.Mvc;
+
 @{
     ViewBag.Title = "Employees";
+    @*  int totalItems = Model.PagingInfo.TotalItems;*@
     int currentPage = Model.PagingInfo.CurrentPage;
-    int totalItems = Model.PagingInfo.TotalItems;
     int itemNum = 1 + (currentPage * 10) - 10;
 }
 
+<p>
+    @using (Html.BeginForm("List", "Person", FormMethod.Get))
+    {
+        <b>Search By:</b>
+        @Html.TextBox("search")<input type="submit" value="Search" />
+    }
+</p>
+
 @if (Model.Employees.Count() == 0)
 {
-    
+
     <table class="table table-bordered">
         <thead>
             <tr>
@@ -48,6 +59,7 @@ else
     </table>
 
     <div class="btn-group pull-right">
-        @Html.PageLinks(Model.PagingInfo, x => Url.Action("List", new { page = x }))
+        @*@Html.PageLinks(Model.PagingInfo, x => Url.Action("List", new { page = x }))*@
+        @Html.PagedListPager(Model.Employees, page => Url.Action("List", new { page, search = Request.QueryString["search"] }))
     </div>
 }

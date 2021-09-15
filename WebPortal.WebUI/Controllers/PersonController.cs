@@ -6,6 +6,8 @@ using System.Web.Mvc;
 using WebPortal.Domain.Entities;
 using WebPortal.Domain.Abstract;
 using WebPortal.WebUI.Models;
+using PagedList;
+using PagedList.Mvc;
 
 namespace WebPortal.WebUI.Controllers
 {
@@ -19,18 +21,25 @@ namespace WebPortal.WebUI.Controllers
             this.repository = personRepository;
         }
 
-        public ViewResult List(int page = 1)
+        public ViewResult List(string search, int? page)
         {
+            const int PAGESIZE = 10;
+            if (page is null)
+            {
+                page = 1;
+            }
+
             EmployeesListViewModel model = new EmployeesListViewModel
             {
                 Employees = repository.IEmployees
+                .Where(p => search == null || p.InternalName.Contains(search)
+               || p.PersonnelNumber.Contains(search)
+               || p.DefaultEmailAddress.Contains(search))
                 .OrderBy(p => p.LastName)
-                .Skip((page - 1) * PageSize)
-                .Take(PageSize),
+                .ToPagedList(page ?? 1, PAGESIZE),
                 PagingInfo = new PagingInfo
                 {
-                    CurrentPage = page,
-                    ItemsPerPage = PageSize,
+                    CurrentPage = (int)page,
                     TotalItems = repository.IEmployees.Count()
                 }
             };
