@@ -45,6 +45,7 @@ namespace WebPortal.WebUI.Infrastructure
             kernel.Bind<IPersonRepository>().ToConstant(mock.Object);*/
 
             kernel.Bind<IPersonRepository>().To<EFPersonRepository>();
+            kernel.Bind<IDepartmentsRepository>().To<EFPersonRepository>();
         }
     }
 }

@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
+
 namespace WebPortal.Domain.Entities
 {
     [Table("Person")]
@@ -18,5 +19,11 @@ namespace WebPortal.Domain.Entities
         public string CentralAccount { get; set; }
         public string PersonnelNumber { get; set; }
         public string DefaultEmailAddress { get; set; }
+        public string UID_PersonHead { get; set; }
+        [NotMapped]
+        public string Manager { get; set; }
+        [NotMapped]
+        public string Department { get; set; }
+
     }
 }

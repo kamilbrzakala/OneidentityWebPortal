@@ -15,7 +15,7 @@ namespace WebPortal.UnitTests
     [TestClass]
     public class UnitTest1
     {
-        [TestMethod]
+      /*  [TestMethod]
         public void Can_Paginate()
         {
             // prepare
@@ -42,7 +42,7 @@ namespace WebPortal.UnitTests
             
             Assert.AreEqual(personArray[0].DefaultEmailAddress, "france.andrade@hotmail.com");
             Assert.AreEqual(personArray[1].DefaultEmailAddress, "naraiza@hotmail.com");
-        }
+        }*/
         
         [TestMethod]
         public void Can_Generate_Page_Links()

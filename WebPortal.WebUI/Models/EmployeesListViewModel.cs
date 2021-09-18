@@ -11,7 +11,8 @@ namespace WebPortal.WebUI.Models
     public class EmployeesListViewModel
     {
         public IPagedList<Person> Employees { get; set; }
-        //public IEnumerable<Person> Employees { get; set; }
+        public IEnumerable<Person> Managers { get; set; }
         public PagingInfo PagingInfo { get; set; }
+        public IEnumerable<DropDownList> Menu { get; set; }
     }
 }

@@ -1,4 +1,5 @@
 ﻿@model WebPortal.WebUI.Models.EmployeesListViewModel
+@using WebPortal.WebUI.Models;
 @using WebPortal.Domain.Entities;
 @using PagedList;
 @using PagedList.Mvc;
@@ -14,6 +15,7 @@
     @using (Html.BeginForm("List", "Person", FormMethod.Get))
     {
         <b>Search By:</b>
+        @Html.DropDownListFor(m => m.Menu, new SelectList(Model.Menu,"MenuItem","MenuItem"), "Select");
         @Html.TextBox("search")<input type="submit" value="Search" />
     }
 </p>
@@ -46,13 +48,19 @@ else
                 <th scope="col">#</th>
                 <th scope="col">Full Name</th>
                 <th scope="col">EmployeeID</th>
-                <th scope="col">Login</th>
+                <th scope="col">Account Name</th>
                 <th scope="col">Email</th>
+                <th scope="col">Manager</th>
+                <th scope="col">Department</th>
             </tr>
         </thead>
         <tbody>
             @foreach (var p in Model.Employees)
             {
+                if (p.UID_PersonHead != null)
+                {
+                    p.Manager = Model.Managers.Where(x => x.UID_Person.Contains(p.UID_PersonHead)).FirstOrDefault().DefaultEmailAddress;
+                }
                 @Html.Partial("EmployeesSummary", p, new ViewDataDictionary { { "nextItem", itemNum++ } })
             }
         </tbody>
@@ -60,7 +68,7 @@ else
 
     <div class="btn-group pull-right">
         @*@Html.PageLinks(Model.PagingInfo, x => Url.Action("List", new { page = x }))*@
-        @Html.PagedListPager(Model.Employees, page => Url.Action("List", new { page, search = Request.QueryString["search"] }),
+        @Html.PagedListPager(Model.Employees, page => Url.Action("List", new { page, search = Request.QueryString["search"], menu = Request.QueryString["Menu"] }),
         new PagedListRenderOptions() { Display = PagedListDisplayMode.IfNeeded, DisplayPageCountAndCurrentLocation = true}
         )
     </div>

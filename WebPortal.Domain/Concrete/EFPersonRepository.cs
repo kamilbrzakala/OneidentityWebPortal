@@ -9,12 +9,17 @@ using WebPortal.Domain.Abstract;
 
 namespace WebPortal.Domain.Concrete
 {
-    public class EFPersonRepository : IPersonRepository
+    public class EFPersonRepository : IPersonRepository, IDepartmentsRepository
     {
         private EFDbContext context = new EFDbContext();
         public IEnumerable<Person> IEmployees
         {
             get { return context.Employees; }
+        }
+
+        public IEnumerable<Department> IDepartments
+        {
+            get { return context.Departments; }
         }
     }
 }

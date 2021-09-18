@@ -12,5 +12,6 @@ namespace WebPortal.Domain.Concrete
     {
         // here we define properties for every table we want to use
         public DbSet<Person> Employees { get; set; }
+        public DbSet<Department> Departments { get; set; }
     }
 }

@@ -44,6 +44,8 @@
     <Compile Include="Abstract\IPersonRepository.cs" />
     <Compile Include="Concrete\EFDbContext.cs" />
     <Compile Include="Concrete\EFPersonRepository.cs" />
+    <Compile Include="Abstract\IDepartmentsRepository.cs" />
+    <Compile Include="Entities\Department.cs" />
     <Compile Include="Entities\Person.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
