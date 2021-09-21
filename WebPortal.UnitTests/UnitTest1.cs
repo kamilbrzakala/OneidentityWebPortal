@@ -134,6 +134,7 @@ namespace WebPortal.UnitTests
             Assert.AreEqual(result4.Employees.ElementAtOrDefault(0).CentralAccount, "RUSTADE1");
             Assert.AreEqual(result5.Employees.ElementAtOrDefault(0).PersonnelNumber, "678");
             Assert.AreEqual(result6.Employees.ElementAtOrDefault(0).Manager, "Andrade, France");
+            Assert.AreEqual(result6.Employees.Count, 1);
         }
 
     }
