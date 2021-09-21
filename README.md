@@ -39,5 +39,5 @@ WebPortal.UnitTests -> WebPortal.WebUI, System.Web, Microsoft.CSharp
 
 Package Name | WebPortal.Domain | WebPortal.WebUI | WebPortal.UnitTests 
 | :--- | :--- | ---: | :---:
-Content Cell  | Content Cell  | Content Cell | Content Cell
-Content Cell  | Content Cell  | Content Cell | Content Cell
+Ninject  |   | x | x
+Ninject.Web.Common  |   | x | x
