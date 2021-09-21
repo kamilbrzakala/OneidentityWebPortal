@@ -10,8 +10,8 @@ Prerequisities:
 3. Install MS SQL Express (https://www.microsoft.com/en-us/sql-server/sql-server-downloads)
 4. Install Visual Studio Community (https://visualstudio.microsoft.com/pl/free-developer-offers/)
 4a. 
-Install-Package Ninject -projectname WebPortal.WebUI
-    Install-Package Ninject -projectname WebPortal.UnitTests
+--Install-Package Ninject -projectname WebPortal.WebUI
+--    Install-Package Ninject -projectname WebPortal.UnitTests
 Install-Package Ninject.Web.Common -projectname WebPortal.WebUI
     Install-Package Ninject.Web.Common -projectname WebPortal.UnitTests
 Install-Package Ninject.Web.Common.Webhost -projectname WebPortal.WebUI
@@ -27,6 +27,9 @@ Install-Package EntityFramework -projectname WebPortal.Domain
 Install-Package EntityFramework -projectname WebPortal.WebUI
 Install-Package -version 3.0.0 bootstrap -projectname WebPortal.WebUI
 Install-Package PagedList.Mvc -projectname WebPortal.WebUI
+    Install-Package PagedList.Mvc -projectname WebPortal.UnitTests   
+Install-Package PagedList -projectname WebPortal.WebUI
+    Install-Package PagedList -projectname WebPortal.UnitTests   
 5. Setup dependencies by adding references:
 WebPortal.Domain -> System.ComponentModel.DataAnnotations
 WebPortal.WebUI -> WebPortal.Domain
