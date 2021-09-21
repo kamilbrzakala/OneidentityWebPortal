@@ -38,6 +38,6 @@ WebPortal.UnitTests -> WebPortal.WebUI, System.Web, Microsoft.CSharp
 [optional]8. Run Powershell script in order to populate a domain with a departments org structure: Prepare AD OU structure.ps1
 
 Package Name | WebPortal.Domain | WebPortal.WebUI | WebPortal.UnitTests 
-| :--- | ---: | :---:
+| :--- | :--- | ---: | :---:
 Content Cell  | Content Cell  | Content Cell | Content Cell
 Content Cell  | Content Cell  | Content Cell | Content Cell
