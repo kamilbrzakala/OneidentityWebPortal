@@ -1,7 +1,7 @@
-# OneidentityWebPortal
-OneIdentity frontend
+# One identity Web Portal
+One Identity frontend
 
-This is a custom web portal interface developed in asp.net mvc5 framework.
+This is a custom web portal interface developed in asp.net mvc 5 framework.
 
 Prerequisities:
 
