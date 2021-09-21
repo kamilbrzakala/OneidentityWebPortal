@@ -35,7 +35,6 @@ namespace WebPortal.WebUI.Controllers
             if ((menu == "All Employees" || String.IsNullOrEmpty(menu)) && (search == null || String.IsNullOrEmpty(search) || !String.IsNullOrEmpty(search)))
             {
                 _employees = repository.IEmployees.OrderBy(p => p.InternalName).ToPagedList(page ?? 1, PageSize);
-
             }
             else if (menu == "Name")
             {
@@ -62,25 +61,26 @@ namespace WebPortal.WebUI.Controllers
             {
                 _employees = repository.IEmployees.Where(p => p.InternalName.Contains(search) || search == null).OrderBy(p => p.InternalName).ToPagedList(page ?? 1, PageSize);
             }*/
+
             EmployeesListViewModel model = new EmployeesListViewModel
             {
-            Employees = _employees,
-            Managers = repository.IEmployees.OrderBy(p => p.InternalName),
-            PagingInfo = new PagingInfo
-                {
-                    CurrentPage = (int)page,
-                    TotalItems = repository.IEmployees.Count()
-                },
+                Employees = _employees,
+                Managers = repository.IEmployees.OrderBy(p => p.InternalName),
+                PagingInfo = new PagingInfo
+                    {
+                        CurrentPage = (int)page,
+                        TotalItems = repository.IEmployees.Count()
+                    },
 
-                Menu = new List<DropDownList>
-                {
-                    new DropDownList() { MenuItem = "All Employees" },
-                    new DropDownList() { MenuItem = "Name" },
-                    new DropDownList() { MenuItem = "Mail" },
-                    new DropDownList() { MenuItem = "Account Name" },
-                    new DropDownList() { MenuItem = "Employee ID" },
-                    new DropDownList() { MenuItem = "Manager" }
-                }
+                    Menu = new List<DropDownList>
+                    {
+                        new DropDownList() { MenuItem = "All Employees" },
+                        new DropDownList() { MenuItem = "Name" },
+                        new DropDownList() { MenuItem = "Mail" },
+                        new DropDownList() { MenuItem = "Account Name" },
+                        new DropDownList() { MenuItem = "Employee ID" },
+                        new DropDownList() { MenuItem = "Manager" }
+                    }
             };
 
             return View(model);
