@@ -10,6 +10,7 @@ Prerequisities:
 3. Install MS SQL Express (https://www.microsoft.com/en-us/sql-server/sql-server-downloads)
 4. Install Visual Studio Community (https://visualstudio.microsoft.com/pl/free-developer-offers/)
 5. Install Packages by following below table
+
 Package Name | WebPortal.Domain | WebPortal.WebUI | WebPortal.UnitTests 
 | :--- | :---: | :---: | :---:
 Ninject  |   | x | x
