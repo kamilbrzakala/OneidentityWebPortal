@@ -12,24 +12,24 @@ Prerequisities:
 4a. 
 * Install-Package Ninject -projectname WebPortal.WebUI
     * Install-Package Ninject -projectname WebPortal.UnitTests
-Install-Package Ninject.Web.Common -projectname WebPortal.WebUI
-    Install-Package Ninject.Web.Common -projectname WebPortal.UnitTests
-Install-Package Ninject.Web.Common.Webhost -projectname WebPortal.WebUI
-    Install-Package Ninject.Web.Common.Webhost -projectname WebPortal.UnitTests
-Install-Package Ninject.MVC5 -projectname WebPortal.WebUI
-    Install-Package Ninject.MVC5 -projectname WebPortal.UnitTests   
-Install-Package Moq -projectname WebPortal.WebUI
-    Install-Package Moq -projectname WebPortal.UnitTests   
-Install-Package Microsoft.Aspnet.Mvc -projectname WebPortal.Domain
-    Install-Package Microsoft.Aspnet.Mvc -projectname WebPortal.UnitTests   
-Install-Package System.ComponentModel.Annotations -projectname WebPortal.Domain
-Install-Package EntityFramework -projectname WebPortal.Domain
-Install-Package EntityFramework -projectname WebPortal.WebUI
-Install-Package -version 3.0.0 bootstrap -projectname WebPortal.WebUI
-Install-Package PagedList.Mvc -projectname WebPortal.WebUI
-    Install-Package PagedList.Mvc -projectname WebPortal.UnitTests   
-Install-Package PagedList -projectname WebPortal.WebUI
-    Install-Package PagedList -projectname WebPortal.UnitTests   
+* Install-Package Ninject.Web.Common -projectname WebPortal.WebUI
+    * Install-Package Ninject.Web.Common -projectname WebPortal.UnitTests
+* Install-Package Ninject.Web.Common.Webhost -projectname WebPortal.WebUI
+    * Install-Package Ninject.Web.Common.Webhost -projectname WebPortal.UnitTests
+* Install-Package Ninject.MVC5 -projectname WebPortal.WebUI
+    * Install-Package Ninject.MVC5 -projectname WebPortal.UnitTests   
+* Install-Package Moq -projectname WebPortal.WebUI
+    * Install-Package Moq -projectname WebPortal.UnitTests   
+* Install-Package Microsoft.Aspnet.Mvc -projectname WebPortal.Domain
+    * Install-Package Microsoft.Aspnet.Mvc -projectname WebPortal.UnitTests   
+* Install-Package System.ComponentModel.Annotations -projectname WebPortal.Domain
+* Install-Package EntityFramework -projectname WebPortal.Domain
+* Install-Package EntityFramework -projectname WebPortal.WebUI
+* Install-Package -version 3.0.0 bootstrap -projectname WebPortal.WebUI
+* Install-Package PagedList.Mvc -projectname WebPortal.WebUI
+    * Install-Package PagedList.Mvc -projectname WebPortal.UnitTests   
+* Install-Package PagedList -projectname WebPortal.WebUI
+    * Install-Package PagedList -projectname WebPortal.UnitTests   
 5. Setup dependencies by adding references:
 WebPortal.Domain -> System.ComponentModel.DataAnnotations
 WebPortal.WebUI -> WebPortal.Domain
