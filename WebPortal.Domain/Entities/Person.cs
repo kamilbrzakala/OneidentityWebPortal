@@ -18,7 +18,23 @@ namespace WebPortal.Domain.Entities
         public string LastName { get; set; }
         public string CentralAccount { get; set; }
         public string PersonnelNumber { get; set; }
-        public string DefaultEmailAddress { get; set; }
+        private string _defaultEmailAddress;
+
+        public string DefaultEmailAddress 
+        { 
+            get 
+            {
+                if (string.IsNullOrEmpty(_defaultEmailAddress))
+                {
+                    _defaultEmailAddress = "not set";
+                }
+                    return _defaultEmailAddress;
+                }
+            set
+            {
+                _defaultEmailAddress = value;
+            }
+        }
         public string UID_PersonHead { get; set; }
         [NotMapped]
         public string Manager { get; set; }
